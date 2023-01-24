@@ -38,15 +38,21 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 prima pagina
+                <table>
+
 
                 @foreach ($posts as $post)
+                    <tr>
+                        {{ $post->id }}
 
-                    {{ $post->id }}
-
-                    <a href="{{ route('post.create') }}"> Crea </a>
-                    <a href="{{ route('post.edit',$post->id) }}"> Modifica </a>
-
+                        <td><a href="{{ route('post.create') }}"> Crea </a></td>
+                        <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
+                        <td>cancella</td>
+                    </tr>
                 @endforeach
+
+
+                </table>
 
 
             </div>
