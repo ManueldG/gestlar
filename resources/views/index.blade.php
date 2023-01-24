@@ -43,8 +43,8 @@
 
                 @foreach ($posts as $post)
                     <tr>
-                        {{ $post->id }}
-
+                        <td>{{ $post->id }}</td>
+                        <td>{{ $post->title }}</td>
                         <td><a href="{{ route('post.create') }}"> Crea </a></td>
                         <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
                         <td>cancella</td>
