@@ -3,10 +3,10 @@
     @section('content')
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                prima pagina
-                <a href="{{ route('post.create') }}"> Crea </a>
-                <table>
 
+                <a href="{{ route('post.create') }}"> Crea nuovo post </a>
+
+                <table>
 
                 @foreach ($posts as $post)
                     <tr>

@@ -14,10 +14,20 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div>
+                    @foreach ($posts as $post)
+
+                        c<div>{{ $post->title }}</div>
+                        <div>{{ $post->description }}</div>c
+
+                    @endforeach
+                    </div>
+
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 @endsection
