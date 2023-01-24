@@ -38,6 +38,7 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 prima pagina
+                <a href="{{ route('post.create') }}"> Crea </a>
                 <table>
 
 
@@ -45,9 +46,16 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->title }}</td>
-                        <td><a href="{{ route('post.create') }}"> Crea </a></td>
+                        <td><a href="{{ route('post.show',$post->id) }}"> Mostra </a></td>
                         <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
-                        <td>cancella</td>
+                        <td>
+                            <form action="{{ route('post.destroy',$post->id) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <input type="submit" value="Cancella">
+                            </form>
+
+                        </td>
                     </tr>
                 @endforeach
 
