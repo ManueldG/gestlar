@@ -14,13 +14,15 @@
                         </div>
                     @endif
 
-                    <div>
-                    @foreach ($posts as $post)
+                    <div class="posts">
+                        @foreach ($posts as $post)
 
-                        c<div>{{ $post->title }}</div>
-                        <div>{{ $post->description }}</div>c
+                            <div>
+                                <div>{{ $post->title }}</div>
+                                <div>{{ $post->description }}</div>
+                            </div>
 
-                    @endforeach
+                        @endforeach
                     </div>
 
 

@@ -10819,3 +10819,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.posts {
+  display: flex;
+  justify-content: space-between;
+}
