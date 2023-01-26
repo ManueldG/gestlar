@@ -1,32 +1,47 @@
 @extends('layouts.app')
 
     @section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Dashboard') }}</div>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-                <a href="{{ route('post.create') }}"> Crea nuovo post </a>
+                        <a href="{{ route('post.create') }}"> Crea nuovo post </a>
 
-                <table>
+                        <table class="table">
 
-                @foreach ($posts as $post)
-                    <tr>
-                        <td>{{ $post->id }}</td>
-                        <td>{{ $post->title }}</td>
-                        <td><a href="{{ route('post.show',$post->id) }}"> Mostra </a></td>
-                        <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
-                        <td>
-                            <form action="{{ route('post.destroy',$post->id) }}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <input type="submit" value="Cancella">
-                            </form>
+                            @foreach ($posts as $post)
+                                <tr>
+                                    <td>{{ $post->id }}</td>
+                                    <td>{{ $post->title }}</td>
+                                    <td><a href="{{ route('post.show',$post->id) }}"> Mostra </a></td>
+                                    <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
+                                    <td>
+                                        <form action="{{ route('post.destroy',$post->id) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="submit" value="Cancella">
+                                        </form>
 
-                        </td>
-                    </tr>
-                @endforeach
+                                    </td>
+                                </tr>
+                            @endforeach
 
-                </table>
+                        </table>
 
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+
 
     @endsection

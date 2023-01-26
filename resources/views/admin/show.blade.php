@@ -14,8 +14,8 @@
                         </div>
                     @endif
 
-                    {{$post->title}}
-                    {{ $post->description }}
+                    <h1>{{$post->title}}</h1>
+                    <p>{{ $post->description }}</p>
 
                 </div>
             </div>

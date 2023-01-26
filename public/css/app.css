@@ -10823,3 +10823,9 @@ textarea.form-control-lg {
   display: flex;
   justify-content: space-between;
 }
+
+.table {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+}

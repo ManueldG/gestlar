@@ -18,8 +18,8 @@
                     <form action="{{ route('post.update',$post->id) }} " method="post">
                         @csrf
                         @method('PUT')
-                        <input type = "text" name = "title">
-                        <input type = "text" name = "description">
+                        <input type = "text" name = "title" value="{{ $post->title }}">
+                        <input type = "text" name = "description" value="{{ $post->description }}">
                         <input type = "submit">
 
                     </form>
