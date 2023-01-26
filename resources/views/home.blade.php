@@ -18,8 +18,8 @@
                         @foreach ($posts as $post)
 
                             <div>
-                                <div>{{ $post->title }}</div>
-                                <div>{{ $post->description }}</div>
+                                <h1>{{ $post->title }}</h1>
+                                <p>{{ $post->description }}</p>
                             </div>
 
                         @endforeach
