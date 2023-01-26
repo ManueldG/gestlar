@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
         $posts = Post::all();
 
+
         return view('home',compact('posts'));
     }
 }

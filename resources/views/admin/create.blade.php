@@ -19,6 +19,16 @@
                         @method('post')
                         <input type = "text" name = "title">
                         <input type = "text" name = "description">
+
+                        <select name="categories" id="" >
+                            @foreach ($categories as $category)
+
+                                <option value="{{ $loop->iteration }}">{{ $category->name }}</option>
+
+                            @endforeach
+                        </select>
+
+
                         <input type = "submit">
 
                     </form>

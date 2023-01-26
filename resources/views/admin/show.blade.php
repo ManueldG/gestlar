@@ -16,6 +16,7 @@
 
                     <h1>{{$post->title}}</h1>
                     <p>{{ $post->description }}</p>
+                    {{ ($post->categories->name) }}
 
                 </div>
             </div>

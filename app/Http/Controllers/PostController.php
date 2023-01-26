@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
@@ -28,7 +29,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $categories = Category::all();
+        return view('admin.create',compact('categories'));
     }
 
     /**
@@ -46,9 +48,12 @@ class PostController extends Controller
 
         $data = $request->all();
         $newPost = new Post();
+
         $newPost->title = $data['title'];
 
         $newPost->description = $data['description'];
+
+        $newPost->categories_id = $data['categories'];
 
         $newPost->save();
 
