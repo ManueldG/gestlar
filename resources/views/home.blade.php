@@ -20,7 +20,7 @@
                             <div>
                                 <h1>{{ $post->title }}</h1>
                                 <p>{{ $post->description }}</p>
-
+                                <code>{{ $post->categories->name }}</code>
                             </div>
 
                         @endforeach
