@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                        {{ $errors }}
                     <form action="{{ route('post.store') }} " method="post">
                         @csrf
                         @method('post')
@@ -28,6 +28,12 @@
                             @endforeach
                         </select>
 
+                        @foreach ($tags as $tag)
+
+                            <label for="tag{{ $loop->iteration }}">{{ $tag->name }}</label>
+                            <input type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}">
+
+                        @endforeach
 
                         <input type = "submit">
 

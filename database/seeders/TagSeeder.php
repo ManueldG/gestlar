@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TagSeeder extends Seeder
 {
@@ -13,6 +14,13 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tags')->insert(['name' => 'Tecnologie']);
+
+        DB::table('tags')->insert(['name' => 'News']);
+
+        DB::table('tags')->insert(['name' => 'Meteo']);
+
+        DB::table('tags')->insert(['name' => 'Foto']);
 
     }
 }
