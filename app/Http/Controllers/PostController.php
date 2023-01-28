@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 
@@ -100,11 +101,20 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $request->validate(
+            [
+                'title' => ['required',
+                Rule::unique('posts')->ignore($post->id),
+                'max:255'],
+                'description' => 'required',
+            ]
+        );
         $data = $request->all();
 
         $post->title = $data['title'];
         $post->description = $data['description'];
         $post->categories_id = $data['categories'];
+
         $post->save();
 
 

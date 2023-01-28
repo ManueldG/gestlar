@@ -24,7 +24,7 @@
                         <select name="categories" id="categories" >
                             @foreach ($categories as $category)
 
-                                <option  value="{{ $loop->iteration }}" @if($post->categories_id == $category->id) selected="selected" @endif>{{ $category->name }}</option>
+                                <option  value="{{ $loop->iteration }}" @if(!is_null($post->categories)&&$post->categories_id == $category->id) selected="selected" @endif>{{ $category->name }}</option>
 
                             @endforeach
                         </select>
@@ -36,12 +36,12 @@
 
                             @foreach ($post->tag as $posttag)
 
-                                @if($posttag->name==$tag->name)  checked @endif
+                                @if($posttag->name == $tag->name)  checked @endif
 
                             @endforeach
                                 >
 
-                    @endforeach
+                        @endforeach
 
                         <input type = "submit">
 
