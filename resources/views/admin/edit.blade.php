@@ -20,6 +20,29 @@
                         @method('PUT')
                         <input type = "text" name = "title" value="{{ $post->title }}">
                         <input type = "text" name = "description" value="{{ $post->description }}">
+
+                        <select name="categories" id="categories" >
+                            @foreach ($categories as $category)
+
+                                <option  value="{{ $loop->iteration }}" @if($post->categories_id == $category->id) selected="selected" @endif>{{ $category->name }}</option>
+
+                            @endforeach
+                        </select>
+
+                        @foreach ($tags as $tag)
+
+                            <label for="tag{{ $loop->iteration }}">{{ $tag->name }}</label>
+                            <input type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id }}"
+
+                            @foreach ($post->tag as $posttag)
+
+                                @if($posttag->name==$tag->name)  checked @endif
+
+                            @endforeach
+                                >
+
+                    @endforeach
+
                         <input type = "submit">
 
                     </form>
