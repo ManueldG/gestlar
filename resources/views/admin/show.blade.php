@@ -16,7 +16,11 @@
 
                     <h1>{{$post->title}}</h1>
                     <p>{{ $post->description }}</p>
-                    {{ ($post->categories->name) }}
+                    <div><code>{{ ($post->categories->name) }}</code></div>
+                    @foreach ($post->tag as $tag)
+                        <code>{{ ($tag->name) }}</code>
+                    @endforeach
+
 
                 </div>
             </div>

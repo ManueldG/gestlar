@@ -21,6 +21,9 @@
                                 <h1>{{ $post->title }}</h1>
                                 <p>{{ $post->description }}</p>
                                 <code>{{ $post->categories->name }}</code>
+                                @foreach ($post->tag as $tag)
+                                    <code>{{ ($tag->name) }}</code>
+                                @endforeach
                             </div>
 
                         @endforeach
