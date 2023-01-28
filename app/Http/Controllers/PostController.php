@@ -104,8 +104,13 @@ class PostController extends Controller
 
         $post->title = $data['title'];
         $post->description = $data['description'];
-
+        $post->categories_id = $data['categories'];
         $post->save();
+
+
+        if (array_key_exists('tag',$data))
+            $post->tag()->sync($data['tag']);
+
 
         return redirect('admin/post');
     }
