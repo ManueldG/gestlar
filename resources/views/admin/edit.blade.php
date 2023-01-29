@@ -14,17 +14,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <ul>
                         @if ($errors->all())
-                         <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success" role="alert">
 
                                 @foreach ($errors->messages() as $mess)
-                                    {{ $mess[0] }}
+
+                                    <li>{ $mess[0] }</li>
+
                                 @endforeach
 
-
-                        </div>
+                            </div>
 
                         @endif
+                    </ul>
+
 
                     <form action="{{ route('post.update',$post->id) }} " method="post">
                         @csrf
