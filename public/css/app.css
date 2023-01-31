@@ -10822,6 +10822,11 @@ textarea.form-control-lg {
 .posts {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.posts img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .table {
