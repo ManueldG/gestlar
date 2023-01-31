@@ -19,6 +19,7 @@
 
                             <div>
                                 <h1>{{ $post->title }}</h1>
+                                <img src="{{ asset('img/').'/'.$post->file }}" alt="">
                                 <p>{{ $post->description }}</p>
                                 <code>{{ $post->categories->name }}</code>
                                 @foreach ($post->tag as $tag)

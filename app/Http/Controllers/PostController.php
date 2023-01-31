@@ -50,7 +50,7 @@ class PostController extends Controller
             'description' => 'required',
         ]);
 
-        $path = Storage::putFile('/public', $request->file('filename'));
+        $path = Storage::putFile('/', $request->file('filename'));
 
         $data = $request->all();
 
