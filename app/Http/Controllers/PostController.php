@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Requests\StorePostRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
@@ -49,7 +50,10 @@ class PostController extends Controller
             'description' => 'required',
         ]);
 
+        $path = Storage::putFile('/public', $request->file('filename'));
+
         $data = $request->all();
+
         $newPost = new Post();
 
         $newPost->title = $data['title'];
@@ -58,12 +62,12 @@ class PostController extends Controller
 
         $newPost->categories_id = $data['categories'];
 
+        $newPost->file = $path;
+
         $newPost->save();
 
         if (array_key_exists('tag',$data))
             $newPost->tag()->sync($data['tag']);
-
-
 
         return redirect('admin/post');
     }

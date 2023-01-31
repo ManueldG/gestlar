@@ -20,7 +20,7 @@
 
                                 @foreach ($errors->messages() as $mess)
 
-                                    <li>{ $mess[0] }</li>
+                                    <li>{{ $mess[0] }}</li>
 
                                 @endforeach
 
@@ -30,7 +30,7 @@
                     </ul>
 
 
-                    <form action="{{ route('post.store') }} " method="post">
+                    <form action="{{ route('post.store') }} " method="post" enctype="multipart/form-data">
                         @csrf
                         @method('post')
                         <input type = "text" name = "title">
@@ -50,6 +50,8 @@
                             <input type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}">
 
                         @endforeach
+
+                        <input type="file" id="myFile" name="filename">
 
                         <input type = "submit">
 
