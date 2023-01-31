@@ -27,12 +27,14 @@ Route::get('/posts',function(){
 );
 
 Route::get('/posts/{id}',function($id){
+
     $post = Post::find($id);
+
     $post->tag;
     $post->categories;
+
     return new PostResource($post);
-}
-);
+});
 
 
 
