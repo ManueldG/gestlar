@@ -10819,12 +10819,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.posts {
+.card-body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.posts img {
+.card-body img {
   height: 200px;
   -o-object-fit: contain;
      object-fit: contain;
