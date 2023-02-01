@@ -24,6 +24,7 @@
                                     <td>{{ $post->title }}</td>
                                     <td><a href="{{ route('post.show',$post->id) }}"> Mostra </a></td>
                                     <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
+
                                     <td>
 
                                         <form action="{{ route('post.destroy',$post->id) }}" method="POST">
@@ -33,6 +34,7 @@
                                         </form>
 
                                     </td>
+
                                 </tr>
                             @endforeach
 
