@@ -8,6 +8,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 .card-body{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
     img{
         height: 200px;
