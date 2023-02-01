@@ -17,8 +17,10 @@
                                 </div>
                             @endif
 
+                            @if ($post->file)
+                                <img src="{{ asset('img/').'/'.$post->file }}" alt="{{ $post->file }}">
+                            @endif
 
-                            <img src="{{ asset('img/').'/'.$post->file }}" alt="">
                             <p>{{ $post->description }}</p>
                             <code>{{ $post->categories->name }}</code>
                             @foreach ($post->tag as $tag)
