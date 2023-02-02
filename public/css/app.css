@@ -10819,6 +10819,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.btn-secondary {
+  background-color: #e9e9ed;
+}
+
 .card-body img {
   height: 200px;
   -o-object-fit: contain;

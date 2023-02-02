@@ -7,10 +7,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.btn-secondary {
+    background-color: #e9e9ed;
+}
+
 .card-body{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 
     img{
         height: 200px;

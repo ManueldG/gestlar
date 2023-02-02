@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <a href="{{ route('post.create') }}"> Crea nuovo post </a>
+                        <a class="btn btn-info" href="{{ route('post.create') }}"> Crea nuovo post </a>
 
                         <table class="table">
 
