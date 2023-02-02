@@ -22,8 +22,8 @@
                                 <tr>
                                     <td>{{ $post->id }}</td>
                                     <td>{{ $post->title }}</td>
-                                    <td><a href="{{ route('post.show',$post->id) }}"> Mostra </a></td>
-                                    <td><a href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
+                                    <td><a class="btn btn-info" href="{{ route('post.show',$post->id) }}"> Mostra </a></td>
+                                    <td><a class="btn btn-info" href="{{ route('post.edit',$post->id) }}"> Modifica </a></td>
 
                                     <td>
 

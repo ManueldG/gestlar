@@ -33,7 +33,7 @@
                     <form action="{{ route('post.store') }} " method="post" enctype="multipart/form-data">
                         @csrf
                         @method('post')
-                        <input type = "text" name = "title" class="btn btn-info">
+                        <input type = "text" name = "title" >
                         <input type = "text" name = "description">
 
                         <select name="categories" id="" >
