@@ -21,6 +21,9 @@
                         <code>{{ ($tag->name) }}</code>
                     @endforeach
 
+                    @if ($post->file)
+                        <img src="{{ asset('img/').'/'.$post->file }}" alt="{{ $post->file }}">
+                    @endif
 
                 </div>
             </div>
