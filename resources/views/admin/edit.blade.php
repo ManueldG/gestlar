@@ -31,7 +31,7 @@
                     </ul>
 
 
-                    <form action="{{ route('post.update',$post->id) }} " method="post">
+                    <form action="{{ route('post.update',$post->id) }} " method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <input type = "text" name = "title" value="{{ $post->title }}">
@@ -58,7 +58,7 @@
                                 >
 
                         @endforeach
-
+                        <input type="file" id="myFile" name="filename">
                         <input type = "submit">
 
                     </form>

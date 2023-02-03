@@ -113,12 +113,14 @@ class PostController extends Controller
                 'description' => 'required',
             ]
         );
-        $data = $request->all();
 
+        $path = Storage::putFile('/', $request->file('filename'));
+
+        $data = $request->all();
         $post->title = $data['title'];
         $post->description = $data['description'];
         $post->categories_id = $data['categories'];
-
+        $post->file = $path;
         $post->save();
 
 
