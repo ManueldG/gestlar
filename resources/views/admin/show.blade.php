@@ -15,15 +15,17 @@
                     @endif
 
                     <h1>{{$post->title}}</h1>
+
+                    @if ($post->file)
+                        <img src="{{ asset('img/').'/'.$post->file }}" alt="{{ $post->file }}">
+                    @endif
+
                     <p>{{ $post->description }}</p>
                     <div><code>{{ ($post->categories->name) }}</code></div>
                     @foreach ($post->tag as $tag)
                         <code>{{ ($tag->name) }}</code>
                     @endforeach
 
-                    @if ($post->file)
-                        <img src="{{ asset('img/').'/'.$post->file }}" alt="{{ $post->file }}">
-                    @endif
 
                 </div>
             </div>
