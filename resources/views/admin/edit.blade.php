@@ -39,11 +39,13 @@
                         </textarea>
 
                         <select name="categories" id="categories" >
+
                             @foreach ($categories as $category)
 
                                 <option  value="{{ $loop->iteration }}" @if(!is_null($post->categories)&&$post->categories_id == $category->id) selected="selected" @endif>{{ $category->name }}</option>
 
                             @endforeach
+
                         </select>
 
                         @foreach ($tags as $tag)
