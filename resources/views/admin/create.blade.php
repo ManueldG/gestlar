@@ -33,29 +33,46 @@
                     <form action="{{ route('post.store') }} " method="post" enctype="multipart/form-data">
                         @csrf
                         @method('post')
-                        <input type = "text" name = "title" >
-                        <textarea name = "description">
 
-                        </textarea>
+                        <div class="form-floating mb-3">
+                            <input class = "form-control" type = "text" name = "title" id="floatingInput" placeholder="Title">
+                            <label for="floatingInput">Titolo</label>
+                        </div>
 
-                        <select name="categories" id="" >
-                            @foreach ($categories as $category)
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Testo" id="floatingTextarea" name = "description"></textarea>
+                            <label for="floatingTextarea">Testo</label>
+                        </div>
 
-                                <option value="{{ $loop->iteration }}">{{ $category->name }}</option>
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                              <option selected>(seleziona)</option>
 
-                            @endforeach
-                        </select>
+                              @foreach ($categories as $category)
+
+                                  <option value="{{ $loop->iteration }}">{{ $category->name }}</option>
+
+                              @endforeach
+                            </select>
+                            <label for="floatingSelect">Categoria</label>
+                          </div>
+
+
+
 
                         @foreach ($tags as $tag)
 
-                            <label for="tag{{ $loop->iteration }}">{{ $tag->name }}</label>
-                            <input type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}">
+                            <div class="form-check">
+                                <label class = "form-check-label" for="tag{{ $loop->iteration }}">{{ $tag->name }}</label>
+                                <input class = "form-check-input" type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}">
+                            </div>
 
-                        @endforeach
+                            @endforeach
 
-                        <input type="file" id="myFile" name="filename">
 
-                        <input type = "submit">
+                        <input class="btn btn-secondary" type="file" id="myFile" name="filename">
+
+                        <input class="btn btn-secondary" type = "submit">
 
                     </form>
 
