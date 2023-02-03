@@ -22,8 +22,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $posts = Post::orderBy('id', 'desc')
         ->get();;
+=======
+        $posts = Post::orderBy('id','desc')->get();
+
+>>>>>>> 9068d5c7 (aggiunta textarea)
 
         return view('home',compact('posts'));
     }

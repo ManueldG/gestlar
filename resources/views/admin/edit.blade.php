@@ -35,7 +35,8 @@
                         @csrf
                         @method('PUT')
                         <input type = "text" name = "title" value="{{ $post->title }}">
-                        <input type = "text" name = "description" value="{{ $post->description }}">
+                        <textarea name = "description">{{ $post->description }}
+                        </textarea>
 
                         <select name="categories" id="categories" >
                             @foreach ($categories as $category)
