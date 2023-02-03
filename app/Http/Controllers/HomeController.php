@@ -21,8 +21,18 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $posts = Post::all();
 
+=======
+<<<<<<< HEAD
+        $posts = Post::orderBy('id', 'desc')
+        ->get();;
+=======
+        $posts = Post::orderBy('id','desc')->get();
+
+>>>>>>> 9068d5c7 (aggiunta textarea)
+>>>>>>> 7c1d2728 (aggiunta textarea)
 
         return view('home',compact('posts'));
     }

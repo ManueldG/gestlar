@@ -34,7 +34,7 @@
                         @csrf
                         @method('post')
                         <input type = "text" name = "title" >
-                        <input type = "text" name = "description">
+                        <textarea name = "description"></textarea>
 
                         <select name="categories" id="" >
                             @foreach ($categories as $category)
