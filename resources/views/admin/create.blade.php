@@ -57,9 +57,6 @@
                             <label for="floatingSelect">Categoria</label>
                           </div>
 
-
-
-
                         @foreach ($tags as $tag)
 
                             <div class="form-check">
@@ -67,10 +64,12 @@
                                 <input class = "form-check-input" type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}">
                             </div>
 
-                            @endforeach
+                        @endforeach
 
-
-                        <input class="btn btn-secondary" type="file" id="myFile" name="filename">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Immagine</label>
+                            <input class="form-control" type="file" id="formFile" name="filename">
+                        </div>
 
                         <input class="btn btn-secondary" type = "submit">
 
