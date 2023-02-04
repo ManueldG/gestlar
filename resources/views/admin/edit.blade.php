@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="form-floating">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="categories">
                               <option selected>(seleziona)</option>
 
                               @foreach ($categories as $category)
@@ -64,7 +64,7 @@
 
                             <div class="form-check">
                                 <label class = "form-check-label" for="tag{{ $loop->iteration }}">{{ $tag->name }}</label>
-                                <input class = "form-check-input" type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}" name="categories"
+                                <input class = "form-check-input" type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}"
                                 @foreach ($post->tag as $posttag)
 
                                     @if($posttag->name == $tag->name)  checked @endif
