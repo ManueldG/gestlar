@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="form-floating">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <select class="form-select" name="categories" id="floatingSelect" aria-label="Floating label select example">
                               <option selected>(seleziona)</option>
 
                               @foreach ($categories as $category)
