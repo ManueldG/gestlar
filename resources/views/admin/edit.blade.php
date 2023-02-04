@@ -64,7 +64,7 @@
 
                             <div class="form-check">
                                 <label class = "form-check-label" for="tag{{ $loop->iteration }}">{{ $tag->name }}</label>
-                                <input class = "form-check-input" type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}"
+                                <input class = "form-check-input" type="checkbox" name="tag[]" id="tag{{ $loop->iteration }}" value="{{ $tag->id}}" name="categories"
                                 @foreach ($post->tag as $posttag)
 
                                     @if($posttag->name == $tag->name)  checked @endif
