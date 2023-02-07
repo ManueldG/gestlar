@@ -10819,7 +10819,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.card-body img {
+.container {
+  margin-bottom: 60px;
+}
+.container .card-header .logo {
+  height: 20px;
+}
+.container .card-body img {
   height: 200px;
   -o-object-fit: contain;
      object-fit: contain;

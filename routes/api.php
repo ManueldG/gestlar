@@ -22,7 +22,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/posts',function(){
-        return new PostResource(Post::all());
+
+    $posts = Post::all();
+
+    foreach($posts as $post){
+        $post->tag;
+        $post->categories;
+    }
+
+    return new PostResource($posts);
     }
 );
 
