@@ -23,7 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/posts',function(){
 
-    $posts = Post::all();
+    $posts = Post::orderBy('id', 'desc')
+    ->get();
 
     foreach($posts as $post){
         $post->tag;
