@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2 class="text-center">React version</h2>
+<h2 class="text-center">React Version</h2>
 <div id="app2"></div>
 
 <h2 class="text-center">Blade Version</h2>
@@ -40,7 +40,7 @@
                         </div>
 
                     </div>
-                            @endforeach
+                @endforeach
             </div>
         </div>
 
